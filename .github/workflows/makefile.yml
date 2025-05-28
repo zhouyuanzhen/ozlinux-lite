@@ -30,3 +30,4 @@ jobs:
       with:
         name: ozinitrd.gz
         path: ozinitrd.gz
+        compression-level: 0 # no compression
