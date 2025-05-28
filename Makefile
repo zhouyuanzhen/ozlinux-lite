@@ -28,4 +28,4 @@ purge:
 	rm -fr ./build ./cache
 
 run:
-	./ahyve -k vmlinuz-6.6.47 -i ozinitrd.gz --cmdline ro console=hvc0
+	./ahyve -k vmlinuz -i ozinitrd.gz --cmdline 'ro console=hvc0'
