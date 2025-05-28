@@ -14,3 +14,9 @@ chmod 755 ahyve
 
 make run
 ```
+
+To shutdown the lite ozlinux VM, run:
+
+```shell
+poweroff -f
+```
