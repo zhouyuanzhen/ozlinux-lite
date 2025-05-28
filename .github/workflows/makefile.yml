@@ -1,0 +1,27 @@
+name: OZLinux Lite CI
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v4
+
+    - name: install dependency packages
+      run: sudo apt -y install wget bzip2 gcc make libncurses-dev libpod-parser-perl gcc-aarch64-linux-gnu
+
+    - name: busybox download
+      run: make dl_busybox
+
+    - name: busybox building
+      run: make build_busybox
+
+    - name: packing rootfs
+      run: make pack_rootfs
