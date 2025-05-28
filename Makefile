@@ -18,7 +18,7 @@ build_busybox:
 
 pack_rootfs:
 	cd rootfs && mkdir -pv {etc,proc,sys,usr/{bin,sbin}}
-    cd rootfs && find . -print0 | cpio --null -ov --format=newc | gzip > ../initramfs.cpio.gz
+	cd rootfs && find . -print0 | cpio --null -ov --format=newc | gzip > ../initramfs.cpio.gz
 	ls -lh initramfs.cpio.gz
 
 clean:
