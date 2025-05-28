@@ -10,7 +10,7 @@ dl_busybox:
 
 build_busybox:
 	mkdir -p ./build
-	test -d ./build/$(BUSYBOX_DIR) || tar -xvf ./cache/$(BUSYBOX_DIR).$(BUSYBOX_EXT) -C ./build/
+	test -d ./build/$(BUSYBOX_DIR) || tar -xf ./cache/$(BUSYBOX_DIR).$(BUSYBOX_EXT) -C ./build/
 	mkdir -p ./build/$(BUSYBOX_DIR)/build
 	test -f configs/busybox/$(BUSYBOX_DIR).config && cp configs/busybox/$(BUSYBOX_DIR).config ./build/$(BUSYBOX_DIR)/build/.config
 	cd ./build/$(BUSYBOX_DIR); make O=build ARCH=arm64
