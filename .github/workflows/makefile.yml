@@ -28,5 +28,5 @@ jobs:
 
     - uses: actions/upload-artifact@v4
       with:
-        name: initramfs.cpio.gz
-        path: initramfs.cpio.gz
+        name: ozinitrd.gz
+        path: ozinitrd.gz
