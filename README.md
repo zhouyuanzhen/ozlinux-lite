@@ -5,6 +5,8 @@ A PoC lite version of Linux
 
 ## Quick Start with macOS
 
+![demo](./demo.gif)
+
 ```shell
 wget -c https://github.com/zhouyuanzhen/ozlinux-lite/releases/download/latest/ahyve
 wget -c https://github.com/zhouyuanzhen/ozlinux-lite/releases/download/latest/ozinitrd.gz
