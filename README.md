@@ -10,5 +10,7 @@ wget -c https://github.com/zhouyuanzhen/ozlinux-lite/releases/download/latest/ah
 wget -c https://github.com/zhouyuanzhen/ozlinux-lite/releases/download/latest/ozinitrd.gz
 wget -c https://github.com/zhouyuanzhen/ozlinux-lite/releases/download/latest/vmlinuz
 
+chmod 755 ahyve
+
 make run
 ```
