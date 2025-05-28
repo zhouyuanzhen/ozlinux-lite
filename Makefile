@@ -17,9 +17,9 @@ build_busybox:
 	cd ./build/$(BUSYBOX_DIR); make O=build ARCH=arm64 install
 
 pack_rootfs:
-	cd rootfs && mkdir -pv {etc,proc,sys,usr/{bin,sbin}}
-	cd rootfs && find . -print0 | cpio --null -ov --format=newc | gzip > ../initramfs.cpio.gz
-	ls -lh initramfs.cpio.gz
+	cd rootfs && mkdir -pv etc proc sys usr/bin usr/sbin
+	cd rootfs && find . -print0 | cpio --null -ov --format=newc | gzip > ../ozinitrd.gz
+	ls -lh ozinitrd.gz
 
 clean:
 	rm -fr ./build
@@ -27,5 +27,5 @@ clean:
 purge:
 	rm -fr ./build ./cache
 
-all: dl_busybox build_busybox pack_rootfs
-	@echo "All in one pipeline!"
+run:
+	./ahyve -k vmlinuz-6.6.47 -i ozinitrd.gz --cmdline ro console=hvc0
