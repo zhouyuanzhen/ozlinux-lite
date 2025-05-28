@@ -3,9 +3,12 @@
 mount -t proc none /proc
 mount -t sysfs none /sys
 
+mknod -m 666 /dev/ttyS0 c 4 64
+
 echo ""
-echo "********************************************************"
-echo -e " * OZLinux is up running! [uptime: $(cut -d' ' -f1 /proc/uptime) seconds] *"
-echo "********************************************************"
+echo "*************************************************"
+echo -e "* OZLinux is up running! [uptime: $(cut -d' ' -f1 /proc/uptime) seconds] *"
+echo "*************************************************"
+echo ""
 
 exec /bin/sh
